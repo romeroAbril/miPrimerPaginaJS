@@ -39,11 +39,11 @@ class BarrasIntegra{
         this.precio = precioI
     }
 }
-const barraInt1 = new BarrasIntegra("Integra", "almendra", 55, 250)
-const barraInt2 = new BarrasIntegra("integra", "girasol", 55, 250)
-const barraInt3 = new BarrasIntegra("integra", "caju", 55, 250)
-const barraInt4 = new BarrasIntegra("integra", "banana", 55, 250)
-const barraInt5 = new BarrasIntegra("integra", "chocolate", 55, 250)
+const barraInt1 = new BarrasIntegra("Integra", "almendra y nuez", 55, 250)
+const barraInt2 = new BarrasIntegra("integra", "girasol y arandanos", 55, 250)
+const barraInt3 = new BarrasIntegra("integra", "caju y arandanos", 55, 250)
+const barraInt4 = new BarrasIntegra("integra", "banana y nuez", 55, 250)
+const barraInt5 = new BarrasIntegra("integra", "chocolate y avena", 55, 250)
 
 //array barras integra
 const catalogoIntegra = [barraInt1, barraInt2, barraInt3, barraInt4, barraInt5]
@@ -52,6 +52,38 @@ const catalogoIntegra = [barraInt1, barraInt2, barraInt3, barraInt4, barraInt5]
 for(let i=0; i<catalogoIntegra.length; i++){
     console.log(catalogoIntegra[i])
 }
+
+
+//barras MUECAS
+class BarrasMuecas{
+    constructor (marcaI, detI, pesoI, precioI){
+        this.marca = marcaI,
+        this.detalle = detI,
+        this.peso = pesoI,
+        this.precio = precioI
+    }
+}
+const barraMuecas1 = new BarrasMuecas("Muecas", "cacao y avellanas", 45, 250)
+const barraMuecas2 = new BarrasMuecas("Muecas", "pasas y almendras", 45, 250)
+const barraMuecas3 = new BarrasMuecas("Muecas", "manzana y arandanos", 45, 250)
+const barraMuecas4 = new BarrasMuecas("Muecas", "pasas y arandanos sin azucar", 45, 250)
+const barraMuecas5 = new BarrasMuecas("Muecas", "banana y dulce de leche", 45, 250)
+
+//array barras Muecas
+const catalogoMuecas = [barraMuecas1, barraMuecas2, barraMuecas3, barraMuecas4, barraMuecas5]
+//impresion barras Muecas
+for(let i=0; i<catalogoMuecas.length; i++){
+    console.log(catalogoMuecas[i])
+}
+
+
+
+
+
+
+
+
+
 
 //Busqueda de producto INTEGRA por sabor
 function buscarProductoInt(array){
