@@ -76,27 +76,64 @@ for(let i=0; i<catalogoMuecas.length; i++){
     console.log(catalogoMuecas[i])
 }
 
+//barras ZAFRAN
+class BarrasZafran{
+    constructor (marcaI, detI, pesoI, precioI){
+        this.marcha = marcaI;
+        this.detalle = detI;
+        this.peso = pesoI;
+        this.precio = precioI
+    }
+}
+const barraZafran1 = new BarrasZafran ("Zafran", "almendra y coco", 28, 220)
+const barraZafran2 = new BarrasZafran ("Zafran", "manzana y chia", 28, 220)
+const barraZafran3 = new BarrasZafran ("Zafran", "mani y cacao", 28, 200)
+const barraZafran4 = new BarrasZafran ("Zafran", "caju y semillas de zapallo", 28, 220)
+const barraZafran5 = new BarrasZafran ("Zafran", "quinoa y chocolate", 28, 220)
+const barraZafran6 = new BarrasZafran ("Zafran", "arandanos y almendras", 28, 220)
+
+//array barras Zafran
+const catalogoZafran = [barraZafran1, barraZafran2, barraZafran3, barraZafran4, barraZafran5, barraZafran6]
+//impresion barras Integra
+for(let i=0; i<catalogoZafran.length; i++){
+    console.log(catalogoZafran[i])
+}
 
 
+//array de arrays (catalogo Integra, Muecas y Zafran)
+const catalogoProductos = [catalogoIntegra, catalogoMuecas, catalogoZafran]
 
-
-
-
+//Busqueda de producto por filtro, includes
+function filtrarProductos (array){
+    let datoBuscado = prompt ("¿Que estas buscando?")
+    let busqueda = array.filter(
+        (dato) =>    dato.marca.toLowerCase().includes(datoBuscado.toLowerCase()) ||
+                     dato.detalle.toLowerCase().includes(datoBuscado.toLowerCase()) ||
+                     dato.peso.includes(datoBuscado) ||  dato.precio.includes(datoBuscado)
+    )
+    if(busqueda.lenght == 0){
+        console.log(`No encontramos ${datoBuscado} en nuestro catalogo`)
+    }
+    else{
+        console.log(busqueda)
+    }
+}
+filtrarProductos(catalogoProductos)
 
 
 
 //Busqueda de producto INTEGRA por sabor
-function buscarProductoInt(array){
-    let saborBusqueda = prompt("Ingrese el sabor deseado: ")
-    let busqueda = array.find(
-        (produ) => produ.detalle.toLowerCase() == saborBusqueda.toLowerCase()
-    )
-    if(busqueda == undefined){
-        console.log('no hubo resultados para su búsqueda')
-    }else{
-        console.log(busqueda)
-    }
-}
-buscarProductoInt(catalogoIntegra)
+//function buscarProductoInt(array){
+ //   let saborBusqueda = prompt("Ingrese el sabor deseado: ")
+ //   let busqueda = array.find(
+ //       (produ) => produ.detalle.toLowerCase() == saborBusqueda.toLowerCase()
+ //   )
+ //   if(busqueda == undefined){
+ //       console.log('no hubo resultados para su búsqueda')
+ //   }else{
+ //       console.log(busqueda)
+ //   }
+//}
+//buscarProductoInt(catalogoIntegra)
 
 
