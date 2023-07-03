@@ -79,7 +79,7 @@ for(let i=0; i<catalogoMuecas.length; i++){
 //barras ZAFRAN
 class BarrasZafran{
     constructor (marcaI, detI, pesoI, precioI){
-        this.marcha = marcaI;
+        this.marca = marcaI;
         this.detalle = detI;
         this.peso = pesoI;
         this.precio = precioI
@@ -104,21 +104,43 @@ for(let i=0; i<catalogoZafran.length; i++){
 const catalogoProductos = [catalogoIntegra, catalogoMuecas, catalogoZafran]
 
 //Busqueda de producto por filtro, includes
-function filtrarProductos (array){
-    let datoBuscado = prompt ("¿Que estas buscando?")
-    let busqueda = array.filter(
-        (dato) =>    dato.marca.toLowerCase().includes(datoBuscado.toLowerCase()) ||
-                     dato.detalle.toLowerCase().includes(datoBuscado.toLowerCase()) ||
-                     dato.peso.includes(datoBuscado) ||  dato.precio.includes(datoBuscado)
-    )
-    if(busqueda.lenght == 0){
-        console.log(`No encontramos ${datoBuscado} en nuestro catalogo`)
+//function filtrarProductos (array){
+//    let datoBuscado = prompt ("¿Que estas buscando?")
+//    let busqueda = array.filter(
+//        (dato) =>    dato.marca.toLowerCase().includes(datoBuscado.toLowerCase()) ||
+//                     dato.detalle.toLowerCase().includes(datoBuscado.toLowerCase()) ||
+//                     dato.peso.includes(datoBuscado) ||  dato.precio.includes(datoBuscado)
+//    )
+//    if(busqueda.length == 0){
+//        console.log(`No encontramos ${datoBuscado} en nuestro catalogo`)
+//    }
+//    else{
+//        console.log(busqueda)
+//    }
+//}
+//filtrarProductos(catalogoProductos)
+
+//Busqueda de producto por filtro, includes
+function filtrarProductos(array) {
+    let datoBuscado = prompt("¿Que estas buscando?")
+   
+    let busqueda = array
+      .flat()
+      .filter(
+        (dato) =>
+          dato.marca.toLowerCase().includes(datoBuscado.toLowerCase()) ||
+          dato.detalle.toLowerCase().includes(datoBuscado.toLowerCase()) ||
+          String(dato.peso).includes(datoBuscado) ||
+          String(dato.precio).includes(datoBuscado)
+      )
+   
+    if (busqueda.length == 0) {
+      console.log(`No encontramos ${datoBuscado} en nuestro catalogo`)
+    } else {
+      console.log(busqueda)
     }
-    else{
-        console.log(busqueda)
-    }
-}
-filtrarProductos(catalogoProductos)
+  }
+  filtrarProductos(catalogoProductos)
 
 
 
