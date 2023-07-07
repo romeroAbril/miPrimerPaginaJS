@@ -159,3 +159,6 @@ function filtrarProductos(array) {
 //buscarProductoInt(catalogoIntegra)
 
 
+//DOM barra de búsqueda
+let busquedaNav = document.getElementsByClassName("d-flex")
+console.log(busquedaNav)
