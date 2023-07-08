@@ -136,20 +136,23 @@ function filtrarProductos(array) {
 let divIntegra = document.getElementById("productosIntegra")
 
 function printProductosIntegra(array) {
-  for (let produ of array) {
-    divIntegra = document.createElement("div")
-  }
-  divIntegra.className = "col-12 col-md-6 col-lg-4 my-2"
-  divIntegra.innerHTML =
-                                 ` <div class="card" style="width: 18rem;">
+  for (let barra of array) { //barra is not defined at printProductosIntegra ¿?
+    let nuevoProductoIntegra = document.createElement("div")
+
+    nuevoProductoIntegra = "col-12 col-md-6 col-lg-4 my-2"
+    nuevoProductoIntegra.innerHTML =
+      ` <div class="card" style="width: 18rem;">
                                   <img src="..." class="card-img-top" alt="...">
                                   <div class="card-body">
                                       <h5 class="card-title"> Marca:${produ.marca}</h5>
-                                      <p class="card-text">${produ.detalla}</p>
+                                      <p class="card-text">${produ.detalle}</p>
                                       <h4 class="card-text">Precio:${produ.precio}
                                       <h3 class="card-text">Peso:${produ.peso}G>
                                       <a href="#" class="btn btn-primary">Agregar al carrito</a>
                                   </div>
                               </div>`
+    divIntegra.appendChild(nuevoProductoIntegra)
+  }
 }
+
 printProductosIntegra(catalogoIntegra)
