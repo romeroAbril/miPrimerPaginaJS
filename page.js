@@ -26,18 +26,15 @@
 // }
 
 
-
-
-
 //catálogos de barritas con arrays de objetos
 //barras INTEGRA
-class BarrasIntegra{
-    constructor (marcaI, detI, pesoI, precioI){
-        this.marca = marcaI,
-        this.detalle = detI,
-        this.peso = pesoI,
-        this.precio = precioI
-    }
+class BarrasIntegra {
+  constructor(marcaI, detI, pesoI, precioI) {
+    this.marca = marcaI,
+      this.detalle = detI,
+      this.peso = pesoI,
+      this.precio = precioI
+  }
 }
 const barraInt1 = new BarrasIntegra("Integra", "almendra y nuez", 55, 250)
 const barraInt2 = new BarrasIntegra("integra", "girasol y arandanos", 55, 250)
@@ -49,19 +46,19 @@ const barraInt5 = new BarrasIntegra("integra", "chocolate y avena", 55, 250)
 const catalogoIntegra = [barraInt1, barraInt2, barraInt3, barraInt4, barraInt5]
 
 //impresion de las barras
-for(let i=0; i<catalogoIntegra.length; i++){
-    console.log(catalogoIntegra[i])
+for (let i = 0; i < catalogoIntegra.length; i++) {
+  console.log(catalogoIntegra[i])
 }
 
 
 //barras MUECAS
-class BarrasMuecas{
-    constructor (marcaI, detI, pesoI, precioI){
-        this.marca = marcaI,
-        this.detalle = detI,
-        this.peso = pesoI,
-        this.precio = precioI
-    }
+class BarrasMuecas {
+  constructor(marcaI, detI, pesoI, precioI) {
+    this.marca = marcaI,
+      this.detalle = detI,
+      this.peso = pesoI,
+      this.precio = precioI
+  }
 }
 const barraMuecas1 = new BarrasMuecas("Muecas", "cacao y avellanas", 45, 250)
 const barraMuecas2 = new BarrasMuecas("Muecas", "pasas y almendras", 45, 250)
@@ -72,93 +69,87 @@ const barraMuecas5 = new BarrasMuecas("Muecas", "banana y dulce de leche", 45, 2
 //array barras Muecas
 const catalogoMuecas = [barraMuecas1, barraMuecas2, barraMuecas3, barraMuecas4, barraMuecas5]
 //impresion barras Muecas
-for(let i=0; i<catalogoMuecas.length; i++){
-    console.log(catalogoMuecas[i])
+for (let i = 0; i < catalogoMuecas.length; i++) {
+  console.log(catalogoMuecas[i])
 }
 
 //barras ZAFRAN
-class BarrasZafran{
-    constructor (marcaI, detI, pesoI, precioI){
-        this.marca = marcaI;
-        this.detalle = detI;
-        this.peso = pesoI;
-        this.precio = precioI
-    }
+class BarrasZafran {
+  constructor(marcaI, detI, pesoI, precioI) {
+    this.marca = marcaI;
+    this.detalle = detI;
+    this.peso = pesoI;
+    this.precio = precioI
+  }
 }
-const barraZafran1 = new BarrasZafran ("Zafran", "almendra y coco", 28, 220)
-const barraZafran2 = new BarrasZafran ("Zafran", "manzana y chia", 28, 220)
-const barraZafran3 = new BarrasZafran ("Zafran", "mani y cacao", 28, 200)
-const barraZafran4 = new BarrasZafran ("Zafran", "caju y semillas de zapallo", 28, 220)
-const barraZafran5 = new BarrasZafran ("Zafran", "quinoa y chocolate", 28, 220)
-const barraZafran6 = new BarrasZafran ("Zafran", "arandanos y almendras", 28, 220)
+const barraZafran1 = new BarrasZafran("Zafran", "almendra y coco", 28, 220)
+const barraZafran2 = new BarrasZafran("Zafran", "manzana y chia", 28, 220)
+const barraZafran3 = new BarrasZafran("Zafran", "mani y cacao", 28, 200)
+const barraZafran4 = new BarrasZafran("Zafran", "caju y semillas de zapallo", 28, 220)
+const barraZafran5 = new BarrasZafran("Zafran", "quinoa y chocolate", 28, 220)
+const barraZafran6 = new BarrasZafran("Zafran", "arandanos y almendras", 28, 220)
 
 //array barras Zafran
 const catalogoZafran = [barraZafran1, barraZafran2, barraZafran3, barraZafran4, barraZafran5, barraZafran6]
 //impresion barras Integra
-for(let i=0; i<catalogoZafran.length; i++){
-    console.log(catalogoZafran[i])
+for (let i = 0; i < catalogoZafran.length; i++) {
+  console.log(catalogoZafran[i])
 }
 
 
 //array de arrays (catalogo Integra, Muecas y Zafran)
 const catalogoProductos = [catalogoIntegra, catalogoMuecas, catalogoZafran]
 
-//Busqueda de producto por filtro, includes
-//function filtrarProductos (array){
-//    let datoBuscado = prompt ("¿Que estas buscando?")
-//    let busqueda = array.filter(
-//        (dato) =>    dato.marca.toLowerCase().includes(datoBuscado.toLowerCase()) ||
-//                     dato.detalle.toLowerCase().includes(datoBuscado.toLowerCase()) ||
-//                     dato.peso.includes(datoBuscado) ||  dato.precio.includes(datoBuscado)
-//    )
-//    if(busqueda.length == 0){
-//        console.log(`No encontramos ${datoBuscado} en nuestro catalogo`)
-//    }
-//    else{
-//        console.log(busqueda)
-//    }
-//}
-//filtrarProductos(catalogoProductos)
 
 //Busqueda de producto por filtro, includes
 function filtrarProductos(array) {
-    let datoBuscado = prompt("¿Que estas buscando?")
-   
-    let busqueda = array
-      .flat()
-      .filter(
-        (dato) =>
-          dato.marca.toLowerCase().includes(datoBuscado.toLowerCase()) ||
-          dato.detalle.toLowerCase().includes(datoBuscado.toLowerCase()) ||
-          String(dato.peso).includes(datoBuscado) ||
-          String(dato.precio).includes(datoBuscado)
-      )
-   
-    if (busqueda.length == 0) {
-      console.log(`No encontramos ${datoBuscado} en nuestro catalogo`)
-    } else {
-      console.log(busqueda)
-    }
+  let datoBuscado = prompt("¿Que estas buscando?")
+
+  let busqueda = array
+    .flat()
+    .filter(
+      (dato) =>
+        dato.marca.toLowerCase().includes(datoBuscado.toLowerCase()) ||
+        dato.detalle.toLowerCase().includes(datoBuscado.toLowerCase()) ||
+        String(dato.peso).includes(datoBuscado) ||
+        String(dato.precio).includes(datoBuscado)
+    )
+
+  if (busqueda.length == 0) {
+    console.log(`No encontramos ${datoBuscado} en nuestro catalogo`)
+  } else {
+    console.log(busqueda)
   }
-  filtrarProductos(catalogoProductos)
+}
+//filtrarProductos(catalogoProductos)
 
 
 
-//Busqueda de producto INTEGRA por sabor
-//function buscarProductoInt(array){
- //   let saborBusqueda = prompt("Ingrese el sabor deseado: ")
- //   let busqueda = array.find(
- //       (produ) => produ.detalle.toLowerCase() == saborBusqueda.toLowerCase()
- //   )
- //   if(busqueda == undefined){
- //       console.log('no hubo resultados para su búsqueda')
- //   }else{
- //       console.log(busqueda)
- //   }
-//}
-//buscarProductoInt(catalogoIntegra)
+//DOM y eventos barra de búsqueda
+//let busquedaCatalogo = document.getElementById("botonBusqueda")
+//busquedaCatalogo.addEventListener("click", () => {
+//  filtrarProductos(catalogoProductos)
+//})
 
 
-//DOM barra de búsqueda
-let busquedaNav = document.getElementsByClassName("d-flex")
-console.log(busquedaNav)
+//impresion productos Integra
+let divIntegra = document.getElementById("productosIntegra")
+
+function printProductosIntegra(array) {
+  for (let produ of array) {
+    divIntegra = document.createElement("div")
+  }
+  divIntegra.className = "col-12 col-md-6 col-lg-4 my-2"
+  divIntegra.innerHTML =
+                                 ` <div class="card" style="width: 18rem;">
+                                  <img src="..." class="card-img-top" alt="...">
+                                  <div class="card-body">
+                                      <h5 class="card-title"> Marca:${produ.marca}</h5>
+                                      <p class="card-text">${produ.detalla}</p>
+                                      <h4 class="card-text">Precio:${produ.precio}
+                                      <h3 class="card-text">Peso:${produ.peso}G>
+                                      <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                                  </div>
+                              </div>`
+}
+printProductosIntegra(catalogoIntegra)
