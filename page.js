@@ -91,7 +91,7 @@ const barraZafran6 = new BarrasZafran("Zafran", "arandanos y almendras", 28, 220
 
 //array barras Zafran
 const catalogoZafran = [barraZafran1, barraZafran2, barraZafran3, barraZafran4, barraZafran5, barraZafran6]
-//impresion barras Integra
+//impresion barras Zafran
 for (let i = 0; i < catalogoZafran.length; i++) {
   console.log(catalogoZafran[i])
 }
@@ -144,10 +144,10 @@ function printProductosIntegra(array) {
       ` <div class="card" style="width: 18rem;">
                                   <img src="..." class="card-img-top" alt="...">
                                   <div class="card-body">
-                                      <h5 class="card-title"> Marca:${produ.marca}</h5>
-                                      <p class="card-text">${produ.detalle}</p>
-                                      <h4 class="card-text">Precio:${produ.precio}
-                                      <h3 class="card-text">Peso:${produ.peso}G>
+                                      <h5 class="card-title"> Marca:${barra.marca}</h5>
+                                      <p class="card-text">${barra.detalle}</p>
+                                      <h4 class="card-text">Precio:${barra.precio}
+                                      <h3 class="card-text">Peso:${barra.peso}G>
                                       <a href="#" class="btn btn-primary">Agregar al carrito</a>
                                   </div>
                               </div>`
