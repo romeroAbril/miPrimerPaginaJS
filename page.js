@@ -133,7 +133,7 @@ function filtrarProductos(array) {
 
 
 //impresion productos Integra
-let divIntegra = document.getElementById("productosIntegra")
+let divIntegra = document.getElementById ("productosIntegra")
 
 function printProductosIntegra(array) {
   for (let barra of array) { //barra is not defined at printProductosIntegra ¿?
