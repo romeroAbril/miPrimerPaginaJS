@@ -139,7 +139,7 @@ function printProductosIntegra(array) {
   for (let barra of array) { //barra is not defined at printProductosIntegra ¿?
     let nuevoProductoIntegra = document.createElement("div")
 
-    nuevoProductoIntegra = "col-12 col-md-6 col-lg-4 my-2"
+    nuevoProductoIntegra.className = "col-12 col-md-6 col-lg-4 my-6"
     nuevoProductoIntegra.innerHTML =
       ` <div class="card" style="width: 18rem;">
                                   <img src="..." class="card-img-top" alt="...">
