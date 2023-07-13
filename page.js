@@ -29,18 +29,19 @@
 //catálogos de barritas con arrays de objetos
 //barras INTEGRA
 class BarrasIntegra {
-  constructor(marcaI, detI, pesoI, precioI) {
+  constructor(marcaI, detI, pesoI, precioI, imagenI) {
     this.marca = marcaI,
       this.detalle = detI,
       this.peso = pesoI,
-      this.precio = precioI
+      this.precio = precioI,
+      this.imagen = imagenI
   }
 }
-const barraInt1 = new BarrasIntegra("Integra", "almendra y nuez", 55, 250)
-const barraInt2 = new BarrasIntegra("integra", "girasol y arandanos", 55, 250)
-const barraInt3 = new BarrasIntegra("integra", "caju y arandanos", 55, 250)
-const barraInt4 = new BarrasIntegra("integra", "banana y nuez", 55, 250)
-const barraInt5 = new BarrasIntegra("integra", "chocolate y avena", 55, 250)
+const barraInt1 = new BarrasIntegra("Integra", "almendra y nuez", 55, 250, "barraIntegraAlmendraNuez.jpg")
+const barraInt2 = new BarrasIntegra("integra", "girasol y arandanos", 55, 250, "barrasIntegraGirasolArandanos.jpg")
+const barraInt3 = new BarrasIntegra("integra", "caju y arandanos", 55, 250, "barraIntegraCajuArandanos.jpg")
+const barraInt4 = new BarrasIntegra("integra", "banana y nuez", 55, 250, "barraIntegraBananaNuez.jpg")
+const barraInt5 = new BarrasIntegra("integra", "chocolate y avena", 55, 250, "barraIntegraAvenaCacaoPuro.jpg")
 
 //array barras integra
 const catalogoIntegra = [barraInt1, barraInt2, barraInt3, barraInt4, barraInt5]
@@ -133,7 +134,7 @@ function filtrarProductos(array) {
 
 
 //impresion productos Integra
-let divIntegra = document.getElementById ("productosIntegra")
+let divIntegra = document.getElementById("productosIntegra")
 
 function printProductosIntegra(array) {
   for (let barra of array) { //barra is not defined at printProductosIntegra ¿?
@@ -142,12 +143,12 @@ function printProductosIntegra(array) {
     nuevoProductoIntegra.className = "col-12 col-md-6 col-lg-4 my-6"
     nuevoProductoIntegra.innerHTML =
       ` <div class="card" style="width: 18rem;">
-                                  <img src="..." class="card-img-top" alt="...">
+                                  <img src="imagenes/${barra.imagen}" class="card-img-top" alt="barra ${barra.marca} sabor ${barra.detalle}">
                                   <div class="card-body">
-                                      <h5 class="card-title"> Marca:${barra.marca}</h5>
-                                      <p class="card-text">${barra.detalle}</p>
-                                      <h4 class="card-text">Precio:${barra.precio}
-                                      <h3 class="card-text">Peso:${barra.peso}G>
+                                      <h3 class="card-title"> Marca: ${barra.marca}</h3>
+                                      <p class="card-text"> ${barra.detalle}</p>
+                                      <h4 class="card-text">Precio: ${barra.precio}</h4>
+                                      <h5 class="card-text">Peso: ${barra.peso}G </h5>
                                       <a href="#" class="btn btn-primary">Agregar al carrito</a>
                                   </div>
                               </div>`
