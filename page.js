@@ -54,18 +54,19 @@ for (let i = 0; i < catalogoIntegra.length; i++) {
 
 //barras MUECAS
 class BarrasMuecas {
-  constructor(marcaI, detI, pesoI, precioI) {
+  constructor(marcaI, detI, pesoI, precioI, imagenI) {
     this.marca = marcaI,
       this.detalle = detI,
       this.peso = pesoI,
-      this.precio = precioI
+      this.precio = precioI,
+      this.imagen = imagenI
   }
 }
-const barraMuecas1 = new BarrasMuecas("Muecas", "cacao y avellanas", 45, 250)
-const barraMuecas2 = new BarrasMuecas("Muecas", "pasas y almendras", 45, 250)
-const barraMuecas3 = new BarrasMuecas("Muecas", "manzana y arandanos", 45, 250)
-const barraMuecas4 = new BarrasMuecas("Muecas", "pasas y arandanos sin azucar", 45, 250)
-const barraMuecas5 = new BarrasMuecas("Muecas", "banana y dulce de leche", 45, 250)
+const barraMuecas1 = new BarrasMuecas("Muecas", "cacao y avellanas", 45, 250, "barraMuecasCacaoAvellana.jpg")
+const barraMuecas2 = new BarrasMuecas("Muecas", "pasas y almendras", 45, 250, "barraMuecasPasasAlmendra.jpg")
+const barraMuecas3 = new BarrasMuecas("Muecas", "manzana y arandanos", 45, 250, "barraMuecasManzanaArandanos.jpg")
+const barraMuecas4 = new BarrasMuecas("Muecas", "pasas y arandanos sin azucar", 45, 250, "barraMuecasPasasArandanos.jpg")
+const barraMuecas5 = new BarrasMuecas("Muecas", "banana y dulce de leche", 45, 250, "barraMuecasBananaDdl.jpg")
 
 //array barras Muecas
 const catalogoMuecas = [barraMuecas1, barraMuecas2, barraMuecas3, barraMuecas4, barraMuecas5]
@@ -76,19 +77,20 @@ for (let i = 0; i < catalogoMuecas.length; i++) {
 
 //barras ZAFRAN
 class BarrasZafran {
-  constructor(marcaI, detI, pesoI, precioI) {
-    this.marca = marcaI;
-    this.detalle = detI;
-    this.peso = pesoI;
-    this.precio = precioI
+  constructor(marcaI, detI, pesoI, precioI, imagenI) {
+    this.marca = marcaI,
+    this.detalle = detI,
+    this.peso = pesoI,
+    this.precio = precioI,
+    this.imagen = imagenI
   }
 }
-const barraZafran1 = new BarrasZafran("Zafran", "almendra y coco", 28, 220)
-const barraZafran2 = new BarrasZafran("Zafran", "manzana y chia", 28, 220)
-const barraZafran3 = new BarrasZafran("Zafran", "mani y cacao", 28, 200)
-const barraZafran4 = new BarrasZafran("Zafran", "caju y semillas de zapallo", 28, 220)
-const barraZafran5 = new BarrasZafran("Zafran", "quinoa y chocolate", 28, 220)
-const barraZafran6 = new BarrasZafran("Zafran", "arandanos y almendras", 28, 220)
+const barraZafran1 = new BarrasZafran("Zafran", "almendra y coco", 28, 220, "barraZafranAlmendraCoco.jpg")
+const barraZafran2 = new BarrasZafran("Zafran", "manzana y chia", 28, 220, "barraZafranManzanaChia.jpg")
+const barraZafran3 = new BarrasZafran("Zafran", "mani y cacao", 28, 200, "barraZafranManiCacao.jpg")
+const barraZafran4 = new BarrasZafran("Zafran", "caju y semillas de zapallo", 28, 220, "barraZafranCajuZapallo.jpg")
+const barraZafran5 = new BarrasZafran("Zafran", "quinoa y chocolate", 28, 220, "barraZafranQuinoaChocolate.jpg")
+const barraZafran6 = new BarrasZafran("Zafran", "arandanos y almendras", 28, 220, "barraZafranAlmendraArandano.jpg")
 
 //array barras Zafran
 const catalogoZafran = [barraZafran1, barraZafran2, barraZafran3, barraZafran4, barraZafran5, barraZafran6]
@@ -137,7 +139,7 @@ function filtrarProductos(array) {
 let divIntegra = document.getElementById("productosIntegra")
 
 function printProductosIntegra(array) {
-  for (let barra of array) { //barra is not defined at printProductosIntegra ¿?
+  for (let barra of array) { 
     let nuevoProductoIntegra = document.createElement("div")
 
     nuevoProductoIntegra.className = "col-12 col-md-6 col-lg-4 my-6"
