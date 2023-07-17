@@ -141,20 +141,21 @@ let divIntegra = document.getElementById("productosIntegra")
 function printProductosIntegra(array) {
   for (let barra of array) {
     let nuevoProductoIntegra = document.createElement("div")
-
+    
     nuevoProductoIntegra.className = "col-12 col-md-6 col-lg-4 my-6"
     nuevoProductoIntegra.innerHTML =
-      ` <div class="card" style="width: 18rem;">
-                                  <img src="imagenes/${barra.imagen}" class="card-img-top" alt="barra ${barra.marca} sabor ${barra.detalle}">
-                                  <div class="card-body">
-                                      <h3 class="card-title"> Marca: ${barra.marca}</h3>
-                                      <p class="card-text"> ${barra.detalle}</p>
-                                      <h4 class="card-text">Precio: ${barra.precio}</h4>
-                                      <h5 class="card-text">Peso: ${barra.peso}G </h5>
-                                      <a href="#" class="btn btn-primary">Agregar al carrito</a>
-                                  </div>
-                              </div>`
+    ` <div class="card" style="width: 18rem;">
+    <img src="imagenes/${barra.imagen}" class="card-img-top" alt="barra ${barra.marca} sabor ${barra.detalle}">
+    <div class="card-body">
+    <h3 class="card-title"> Marca: ${barra.marca}</h3>
+    <p class="card-text"> ${barra.detalle}</p>
+    <h4 class="card-text">Precio: ${barra.precio}</h4>
+    <h5 class="card-text">Peso: ${barra.peso}G </h5>
+    <a href="#" class="btn btn-primary">Agregar al carrito</a>
+    </div>
+    </div>`
     divIntegra.appendChild(nuevoProductoIntegra)
+    
   }
 }
 
@@ -189,6 +190,8 @@ let divZafran = document.getElementById("productosZafran")
 
 function printProductosZafran(array) {
   for (let barra of array) {
+
+    localStorage.clear()
     let nuevoProductoZafran = document.createElement("div")
 
     nuevoProductoZafran.className = "col-12 col-md-6 col-lg-4 my-6"
@@ -204,6 +207,8 @@ function printProductosZafran(array) {
     </div>
     </div>`
     divZafran.appendChild(nuevoProductoZafran)
+    
+    localStorage.setItem("arregloZafran", nuevoProductoZafran)
   }
 }
 
@@ -214,8 +219,6 @@ showMuecasBtn.addEventListener("click", () => {
   printProductosMuecas(catalogoMuecas)
 })
 
-//sessionStorage.setItem("verMuecas", showMuecasBtn)
-//sessionStorage.removeItem("verMuecas")
 
 let showIntegraBtn = document.getElementById("mostrarIntegraBtn")
 showIntegraBtn.addEventListener("click", () => {
@@ -223,7 +226,6 @@ showIntegraBtn.addEventListener("click", () => {
   printProductosIntegra(catalogoIntegra)
 })
 
-//sessionStorage.setItem("verIntegra", showIntegraBtn)
 
 let showZafranBtn = document.getElementById("mostrarZafranBtn")
 showZafranBtn.addEventListener("click", () => {
@@ -231,4 +233,4 @@ showZafranBtn.addEventListener("click", () => {
   printProductosZafran(catalogoZafran)
 })
 
-//sessionStorage.setItem("verZafran", showZafranBtn)
+
