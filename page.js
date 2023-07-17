@@ -79,14 +79,14 @@ for (let i = 0; i < catalogoMuecas.length; i++) {
 class BarrasZafran {
   constructor(marcaI, detI, pesoI, precioI, imagenI) {
     this.marca = marcaI,
-    this.detalle = detI,
-    this.peso = pesoI,
-    this.precio = precioI,
-    this.imagen = imagenI
+      this.detalle = detI,
+      this.peso = pesoI,
+      this.precio = precioI,
+      this.imagen = imagenI
   }
 }
 const barraZafran1 = new BarrasZafran("Zafran", "almendra y coco", 28, 220, "barraZafranAlmendraCoco.jpg")
-const barraZafran2 = new BarrasZafran("Zafran", "manzana y chia", 28, 220, "barraZafranManzanaChia.jpg")
+const barraZafran2 = new BarrasZafran("Zafran", "manzana y chia", 28, 220, "barrasZafranManzanaChia.jpg")
 const barraZafran3 = new BarrasZafran("Zafran", "mani y cacao", 28, 200, "barraZafranManiCacao.jpg")
 const barraZafran4 = new BarrasZafran("Zafran", "caju y semillas de zapallo", 28, 220, "barraZafranCajuZapallo.jpg")
 const barraZafran5 = new BarrasZafran("Zafran", "quinoa y chocolate", 28, 220, "barraZafranQuinoaChocolate.jpg")
@@ -139,7 +139,7 @@ function filtrarProductos(array) {
 let divIntegra = document.getElementById("productosIntegra")
 
 function printProductosIntegra(array) {
-  for (let barra of array) { 
+  for (let barra of array) {
     let nuevoProductoIntegra = document.createElement("div")
 
     nuevoProductoIntegra.className = "col-12 col-md-6 col-lg-4 my-6"
@@ -158,4 +158,77 @@ function printProductosIntegra(array) {
   }
 }
 
-printProductosIntegra(catalogoIntegra)
+
+//impresion productos Muecas
+let divMuecas = document.getElementById("productosMuecas")
+
+function printProductosMuecas(array) {
+  for (let barra of array) {
+    let nuevoProductoMuecas = document.createElement("div")
+
+    nuevoProductoMuecas.className = "col-12 col-md-6 col-lg-4 my-6"
+    nuevoProductoMuecas.innerHTML =
+      ` <div class="card" style="width: 18rem;">
+    <img src="imagenes/${barra.imagen}" class="card-img-top" alt="barra ${barra.marca} sabor ${barra.detalle}">
+    <div class="card-body">
+    <h3 class="card-title"> Marca: ${barra.marca}</h3>
+    <p class="card-text"> ${barra.detalle}</p>
+    <h4 class="card-text">Precio: ${barra.precio}</h4>
+    <h5 class="card-text">Peso: ${barra.peso}G </h5>
+    <a href="#" class="btn btn-primary">Agregar al carrito</a>
+    </div>
+                              </div>`
+    divMuecas.appendChild(nuevoProductoMuecas)
+  }
+}
+
+
+
+//impresion productos Zafran
+let divZafran = document.getElementById("productosZafran")
+
+function printProductosZafran(array) {
+  for (let barra of array) {
+    let nuevoProductoZafran = document.createElement("div")
+
+    nuevoProductoZafran.className = "col-12 col-md-6 col-lg-4 my-6"
+    nuevoProductoZafran.innerHTML =
+      ` <div class="card" style="width: 18rem;">
+    <img src="imagenes/${barra.imagen}" class="card-img-top" alt="barra ${barra.marca} sabor ${barra.detalle}">
+    <div class="card-body">
+    <h3 class="card-title"> Marca: ${barra.marca}</h3>
+    <p class="card-text"> ${barra.detalle}</p>
+    <h4 class="card-text">Precio: ${barra.precio}</h4>
+    <h5 class="card-text">Peso: ${barra.peso}G </h5>
+    <a href="#" class="btn btn-primary">Agregar al carrito</a>
+    </div>
+    </div>`
+    divZafran.appendChild(nuevoProductoZafran)
+  }
+}
+
+//boton mostrar catálogos - eventos
+let showMuecasBtn = document.getElementById("mostrarMuecasBtn")
+showMuecasBtn.addEventListener("click", () => {
+
+  printProductosMuecas(catalogoMuecas)
+})
+
+//sessionStorage.setItem("verMuecas", showMuecasBtn)
+//sessionStorage.removeItem("verMuecas")
+
+let showIntegraBtn = document.getElementById("mostrarIntegraBtn")
+showIntegraBtn.addEventListener("click", () => {
+
+  printProductosIntegra(catalogoIntegra)
+})
+
+//sessionStorage.setItem("verIntegra", showIntegraBtn)
+
+let showZafranBtn = document.getElementById("mostrarZafranBtn")
+showZafranBtn.addEventListener("click", () => {
+
+  printProductosZafran(catalogoZafran)
+})
+
+//sessionStorage.setItem("verZafran", showZafranBtn)
