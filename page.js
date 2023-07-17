@@ -141,6 +141,7 @@ let divIntegra = document.getElementById("productosIntegra")
 function printProductosIntegra(array) {
   for (let barra of array) {
     let nuevoProductoIntegra = document.createElement("div")
+    divIntegra.innerHTML = '';
     
     nuevoProductoIntegra.className = "col-12 col-md-6 col-lg-4 my-6"
     nuevoProductoIntegra.innerHTML =
@@ -166,6 +167,7 @@ let divMuecas = document.getElementById("productosMuecas")
 function printProductosMuecas(array) {
   for (let barra of array) {
     let nuevoProductoMuecas = document.createElement("div")
+    divMuecas.innerHTML = '';
 
     nuevoProductoMuecas.className = "col-12 col-md-6 col-lg-4 my-6"
     nuevoProductoMuecas.innerHTML =
@@ -191,8 +193,8 @@ let divZafran = document.getElementById("productosZafran")
 function printProductosZafran(array) {
   for (let barra of array) {
 
-    localStorage.clear()
     let nuevoProductoZafran = document.createElement("div")
+    divZafran.innerHTML = '';
 
     nuevoProductoZafran.className = "col-12 col-md-6 col-lg-4 my-6"
     nuevoProductoZafran.innerHTML =
@@ -207,8 +209,7 @@ function printProductosZafran(array) {
     </div>
     </div>`
     divZafran.appendChild(nuevoProductoZafran)
-    
-    localStorage.setItem("arregloZafran", nuevoProductoZafran)
+
   }
 }
 
