@@ -236,15 +236,28 @@ showZafranBtn.addEventListener("click", () => {
 
 
 //dark mode y light mode JSON
-let oscuro = document.getElementById("modoOscuro")
-let claro = document.getElementById("modoClaro")
-let original = document.getElementById("deshacer")
+let modeButton = document.getElementById("modo");
 
-let darkMode = localStorage.getItem("darkMode")
-if (darkMode == "true"){
-  document.body.classList.add("modoOscuro")
-  modoOscuro.addEventListener("click", () =>{
-    document.body.classList.add("modoOscuro")
-    localStorage.setItem("darkMode", true)
-  })
-}
+const cambiarTheme = () => {
+	if (document.body.classList.contains("modoOscuro")) {
+		localStorage.setItem("modoDark", "off");
+		document.body.classList.remove("modoOscuro");
+		modeButton.textContent = "Cambiar a modo dark";
+	} else {
+		localStorage.setItem("modoDark", "on");
+		document.body.classList.add("modoOscuro");
+		modeButton.textContent = "Cambiar a modo light";
+	}
+};
+
+const traerModo = () => {
+	const modoDark = localStorage.getItem("modoDark");
+	if (modoDark === "on") {
+		document.body.classList.add("modoOscuro");
+		modeButton.textContent = "cambiar a modo light";
+	}
+};
+
+traerModo();
+
+modeButton.addEventListener("click", cambiarTheme);
